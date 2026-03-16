@@ -92,6 +92,12 @@
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $pass = mysqli_real_escape_string($conn, $_POST['password']);
 
+        if($email == '' || $pass == ''){
+            $_SESSION['error'] = "All fields are required!";
+            header("Location: ../pages/login.php");
+            exit();
+        }
+
         $query1 = "SELECT * FROM users WHERE email = ?";
         $stmt1 = mysqli_prepare($conn, $query1);
         mysqli_stmt_bind_param($stmt1, "s", $email);
