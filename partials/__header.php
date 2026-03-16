@@ -6,6 +6,7 @@
     <title><?= $title ?? 'BASC Library SMS' ?></title>
     <link href="<?=  $cssPath ?? 'assets/css/output.css' ?>?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="shortcut icon" href="../assets/imgs/lib-logo-no-bg.png" type="image/x-icon">
     
 </head>
 <body>
