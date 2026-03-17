@@ -22,7 +22,7 @@ verifyUser();
 
     <main class="p-4 md:ml-64 h-auto pt-20 bg-muted dark:bg-gray-900 min-h-screen">
        <div class="w-full p-6 flex flex-col gap-6 text-gray-800 dark:text-gray-200 ">
-        <div class="flex max-w-6xl items-center justify-between">
+        <div class="flex w-full items-center justify-between">
           <h1 class=" font-semibold text-xl">Manage Admins</h1>
           <button type="button"  data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="text-white bg-success box-border border border-transparent hover:bg-success-strong focus:ring-4 focus:ring-success-medium shadow-xs font-medium leading-5 rounded-base text-sm px-2 py-1 focus:outline-none cursor-pointer">
             <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -31,26 +31,26 @@ verifyUser();
           </button>
         </div>
           
-          <div class="max-w-6xl p-6 bg-white dark:bg-gray-800 shadow-md rounded-lg">
-            <table id="search-table">
+          <div class="w-full p-6 bg-white dark:bg-gray-800  shadow-md rounded-lg">
+            <table id="search-table" class="dark:text-gray-200">
                 <thead>
                     <tr>
-                        <th>
+                        <th class="dark:bg-gray-800 dark:text-gray-200">
                             <span class="flex items-center">
                                 Name
                             </span>
                         </th>
-                        <th>
+                        <th class="dark:bg-gray-800 dark:text-gray-200">
                             <span class="flex items-center">
                                 Email
                             </span>
                         </th>
-                        <th>
+                        <th class="dark:bg-gray-800 dark:text-gray-200">
                             <span class="flex items-center">
                                 Status
                             </span>
                         </th>
-                        <th>
+                        <th class="dark:bg-gray-800 dark:text-gray-200">
                             <span class="flex items-center">
                                 Action
                             </span>
@@ -68,17 +68,16 @@ verifyUser();
                         while($row = $result->fetch_assoc()){
                   ?>
                     <tr>
-                        <td class="font-medium text-heading whitespace-nowrap"><?= $row['name'] ?></td>
-                        <td><?= $row['email'] ?></td>
-                        <td>
+                        <td class="font-medium text-heading dark:text-gray-200 whitespace-nowrap"><?= $row['name'] ?></td>
+                        <td class="dark:text-gray-200"><?= $row['email'] ?></td>
+                        <td class="dark:text-gray-200">
                           <span class="<?= $row['status'] == 'active' ? 'bg-success-soft text-fg-success-strong' : 'bg-warning-soft text-fg-warning' ?>  text-xs font-medium px-1.5 py-0.5 rounded"><?= $row['status'] ?? 'Disabled' ?></span>
                         </td>
-                        <td>
-                          
+                        <td class="dark:text-gray-200">
                           <label class="inline-flex items-center cursor-pointer">
                             <input type="checkbox" name="status" value="active" class="sr-only peer" <?= $row['status'] == 'active' ? 'checked' : '' ?> onchange="toggleStatus(<?= $row['id'] ?>, this)">
                             <div class="relative w-9 h-5 bg-neutral-quaternary peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-soft dark:peer-focus:ring-brand-soft rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-buffer after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-brand"></div>
-                            <span class="select-none ms-3 text-sm font-medium text-heading"><?= $row['status'] == 'active' ? 'Deactivate' : 'Activate' ?></span>
+                            <span class="select-none ms-3 text-sm font-medium"><?= $row['status'] == 'active' ? 'Deactivate' : 'Activate' ?></span>
                           </label>
                         </td>
                     </tr>
@@ -95,11 +94,6 @@ verifyUser();
        </div>
 
        <script>
-        // function toggleStatus(id, value){
-        //   const userId = parseInt(id);
-        //   const status = String(value);
-        //   window.location.href=`../../api/toggleStatus.php?id=${userId}&status=${status}`;
-        // }
 
         function toggleStatus(id, checkbox){
           const status = checkbox.checked ? 'active' : 'inactive';
