@@ -22,7 +22,7 @@ Toastify({
     text: "<?= $_SESSION['success'] ?>",
     duration: 3500,
     gravity: "top",
-    position: "right",
+    position: "right", 
     style: {
         background: "linear-gradient(to right, #22c55e, #16a34a)",
         borderRadius: "8px",
