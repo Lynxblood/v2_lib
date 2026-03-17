@@ -37,19 +37,19 @@ verifyUser();
                   <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
                       <tr>
                           <th scope="col" class="px-6 py-3 font-medium">
-                              Product name
+                              Catogory name
                           </th>
                           <th scope="col" class="px-6 py-3 font-medium">
-                              Color
+                              Description
                           </th>
                           <th scope="col" class="px-6 py-3 font-medium">
-                              Category
+                              Order
                           </th>
                           <th scope="col" class="px-6 py-3 font-medium">
                               Price
                           </th>
                           <th scope="col" class="px-6 py-3 font-medium">
-                              <span class="sr-only">Edit</span>
+                              <span class="sr-only">Actions</span>Actions
                           </th>
                       </tr>
                   </thead>
@@ -67,16 +67,37 @@ verifyUser();
                           <td class="px-6 py-4">
                               $2999
                           </td>
-                          <td class="px-6 py-4 text-right">
-                              <a href="#" class="font-medium text-fg-brand hover:underline">Edit</a>
+                          <td class="px-6 py-4">
+                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+                                <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+                                </svg>
+                            </button>
                           </td>
                       </tr>
                   </tbody>
               </table>
           </div>     
        </div>
+        
+        <!-- Dropdown menu -->
+        <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+            </li>
+            <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+            </li>
+            </ul>
+            <div class="py-2">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Separated link</a>
+            </div>
+        </div>
     </main>
-
 
 <?php
 require '../../partials/__footer.php';
