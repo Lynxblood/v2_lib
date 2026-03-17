@@ -5,6 +5,10 @@ $cssPath = '../assets/css/output.css';
 $flowbiteJsPath = '../assets/js/flowbite.min.js';
 
 include '../partials/__header.php';
+include '../middleware/verifyUser.php';
+isUserLoggedIn();
+
+
 ?>
 <div class="min-h-screen">
     <section class="bg-gray-50 dark:bg-gray-900 ">

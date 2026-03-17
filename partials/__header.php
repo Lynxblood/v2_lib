@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'BASC Library SMS' ?></title>
-    <link href="<?=  $cssPath ?? 'assets/css/output.css' ?>?>" rel="stylesheet">
+    <link href="<?=  $cssPath ?? 'assets/css/output.css' ?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="shortcut icon" href="../assets/imgs/lib-logo-no-bg.png" type="image/x-icon">
+    <link rel="shortcut icon" href="<?=  $iconPath ?? '../assets/imgs/lib-logo-no-bg.png' ?>" type="image/x-icon">
     
 </head>
 <body>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    

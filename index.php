@@ -24,6 +24,8 @@ include './partials/__header.php';
     </div>
 </section>
 
+
+
 <?php
 include './partials/__footer.php';
 ?>

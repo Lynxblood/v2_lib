@@ -1,15 +1,12 @@
 <?php
 session_start();
-$title = "BASC LSMS | Dashboard";
+$title = "BASC LSMS | Login";
 $cssPath = '../../assets/css/output.css';
 $flowbiteJsPath = '../../assets/js/flowbite.min.js';
 $iconPath = '../../assets/imgs/lib-logo-no-bg.png';
 
-
-
 include '../../partials/__header.php';
 include '../../middleware/verifyUser.php';
-include '../../components/alerts.php';
 verifyUser();
 
 ?>

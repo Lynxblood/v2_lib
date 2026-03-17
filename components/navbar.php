@@ -1,4 +1,13 @@
-<nav class="bg-white border-b border-gray-200 px-4 py-2.5 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50 px-20">
+<?php
+  $user = $_SESSION['user'];
+
+  $name = $user['name'];
+  $email = $user['email'];
+  $id = $user['id'];
+
+?>
+
+<nav class="bg-white border-b h-16 border-gray-200 py-4 dark:bg-gray-800 dark:border-gray-700 fixed left-0 right-0 top-0 z-50 md:z-40 px-4 md:px-20">
       <div class="flex flex-wrap justify-between items-center">
         <div class="flex justify-start items-center">
           <button
@@ -35,17 +44,18 @@
             </svg>
             <span class="sr-only">Toggle sidebar</span>
           </button>
-          <a href="https://flowbite.com" class="flex items-center justify-between mr-4">
+          <a href="dashboard.php" class="flex items-center justify-between mr-4">
             <img
-              src="https://flowbite.s3.amazonaws.com/logo.svg"
+              src="../../assets/imgs/lib-logo-no-bg.png"
               class="mr-3 h-8"
               alt="Flowbite Logo"
             />
-            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
+            <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">BASC Library</span>
           </a>
         
         </div>
         <div class="flex items-center lg:order-2">
+
           <button
             type="button"
             class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -54,7 +64,7 @@
             data-dropdown-toggle="dropdown"
           >
             <span class="sr-only">Open user menu</span>
-            <div class="w-8 h-8 rounded-full bg-gray-400 flex items-center justify-center font-medium cursor-pointer">JG</div>
+            <div class="w-8 h-8 rounded-full bg-green-500 text-white font-semibold flex items-center justify-center font-medium cursor-pointer"><?= ucfirst($name[0]).ucfirst($name[1])?></div>
           </button>
           <!-- Dropdown menu -->
           <div
@@ -64,11 +74,11 @@
             <div class="py-3 px-4">
               <span
                 class="block text-sm font-semibold text-gray-900 dark:text-white"
-                >Neil Sims</span
+                ><?= ucwords($name)?></span
               >
               <span
                 class="block text-sm text-gray-900 truncate dark:text-white"
-                >name@flowbite.com</span
+                ><?= $email?></span
               >
             </div>
             <ul
@@ -77,14 +87,7 @@
             >
               <li>
                 <a
-                  href="#"
-                  class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
-                  >My profile</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
+                  href="account.php"
                   class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white"
                   >Account settings</a
                 >
@@ -96,7 +99,7 @@
             >
               <li>
                 <form action="../../api/auth.php" method="post">
-                    <button type="submit" name="logout" class="block w-full py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white rounded-lg" >Sign out</button>
+                    <button type="submit" name="logout" class="block w-full py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white rounded-lg cursor-pointer" >Sign out</button>
                 </form>
                 
               </li>
