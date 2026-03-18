@@ -95,14 +95,15 @@
 
         mysqli_begin_transaction($conn);
         $email = $_POST['email'];
-        $pass = $_POST['password'];
+        $pass1 = $_POST['pass1'];
+        $pass2 = $_POST['pass2'];
         $role = "admin";
         $name = $_POST['name'];
         $status = "active";
 
-        if($email == '' || $name == '' || $pass == ''){
+        if($email == '' || $name == '' || $pass1 == '' || $pass2 == ''){
             $_SESSION['error'] = "All fields are required, Try Again!";
-           header("Location: ../pages/admin/users.php");
+           header("Location: ../pages/admin/userForm.php");
             exit();
         }
 
@@ -114,11 +115,17 @@
 
         if (mysqli_num_rows($result) > 0) {
             $_SESSION['error'] = "Email already used!";
-            header("Location: ../pages/admin/users.php");
+            header("Location: ../pages/admin/userForm.php");
             exit();
         }
 
-        $hashedPassword = password_hash($pass, PASSWORD_BCRYPT);
+        if($pass1 != $pass2){
+            $_SESSION['error'] = "Passwords do not match!";
+           header("Location: ../pages/admin/userForm.php");
+            exit();
+        }
+
+        $hashedPassword = password_hash($pass1, PASSWORD_BCRYPT);
 
         $query = "INSERT INTO `users`(`name`, `email`, `password`, `role`, `status`) VALUES (?,?,?,?,?)";
         $stmt = mysqli_prepare($conn, $query);
@@ -135,7 +142,7 @@
             mysqli_rollback($conn);
             
             $_SESSION['error'] = "Something went wrong!";
-            header("Location: ../pages/admin/users.php");
+            header("Location: ../pages/admin/userForm.php");
             exit();
         }
     }
