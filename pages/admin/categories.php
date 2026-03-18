@@ -30,73 +30,51 @@ verifyUser();
 
           </button>
         </div>
-          
-        <div class="w-full p-6 bg-white dark:bg-gray-800  shadow-md rounded-lg">
-          <div class="relative overflow-x-auto bg-neutral-primary-soft dark:bg-gray-800 shadow-xs rounded-base border border-default">
-              <table class="w-full text-sm text-left rtl:text-right text-body">
-                  <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
-                      <tr>
-                          <th scope="col" class="px-6 py-3 font-medium">
-                              Catogory name
-                          </th>
-                          <th scope="col" class="px-6 py-3 font-medium">
-                              Description
-                          </th>
-                          <th scope="col" class="px-6 py-3 font-medium">
-                              Order
-                          </th>
-                          <th scope="col" class="px-6 py-3 font-medium">
-                              Price
-                          </th>
-                          <th scope="col" class="px-6 py-3 font-medium">
-                              <span class="sr-only">Actions</span>Actions
-                          </th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr class="bg-neutral-primary-soft border-b border-default hover:bg-neutral-secondary-medium">
-                          <th scope="row" class="px-6 py-4 font-medium text-heading whitespace-nowrap">
-                              Apple MacBook Pro 17"
-                          </th>
-                          <td class="px-6 py-4">
-                              Silver
-                          </td>
-                          <td class="px-6 py-4">
-                              Laptop
-                          </td>
-                          <td class="px-6 py-4">
-                              $2999
-                          </td>
-                          <td class="px-6 py-4">
-                            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
-                                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
-                                <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
-                                </svg>
-                            </button>
-                          </td>
-                      </tr>
-                  </tbody>
-              </table>
-          </div>     
-       </div>
-        
-        <!-- Dropdown menu -->
-        <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
-            <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
-            </li>
-            <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-            </li>
-            <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
-            </li>
-            </ul>
-            <div class="py-2">
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Separated link</a>
-            </div>
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Product name
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Color
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Category
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            Price
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            <span class="sr-only">Edit</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            Apple MacBook Pro 17"
+                        </th>
+                        <td class="px-6 py-4">
+                            Silver
+                        </td>
+                        <td class="px-6 py-4">
+                            Laptop
+                        </td>
+                        <td class="px-6 py-4">
+                            $2999
+                        </td>
+                        <td class="px-6 py-4 text-right">
+                            <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
         </div>
+
+        
     </main>
 
 <?php
